@@ -1,4 +1,21 @@
-{
+#include <iostream>
+
+// Función para verificar si un número es primo
+bool esPrimo(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+// Función para verificar si un número es potencia de 2
+bool esPotenciaDeDos(int n) {
+    if (n <= 0) return false;
+    return (n & (n - 1)) == 0;
+}
+
+int main() {
     int numero;
     std::cout << "Ingrese un numero entero: ";
     std::cin >> numero;
